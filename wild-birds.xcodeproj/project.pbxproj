@@ -14,6 +14,7 @@
 		F7527CDB24F4DD9600F50CFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7527CD924F4DD9600F50CFA /* Main.storyboard */; };
 		F7527CDD24F4DD9800F50CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7527CDC24F4DD9800F50CFA /* Assets.xcassets */; };
 		F7527CE024F4DD9800F50CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7527CDE24F4DD9800F50CFA /* LaunchScreen.storyboard */; };
+		F7527CE824F4E02900F50CFA /* BirdTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = F7527CE724F4E02900F50CFA /* BirdTileSet.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F7527CDC24F4DD9800F50CFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7527CDF24F4DD9800F50CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7527CE124F4DD9800F50CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7527CE724F4E02900F50CFA /* BirdTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BirdTileSet.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				F7527CDC24F4DD9800F50CFA /* Assets.xcassets */,
 				F7527CDE24F4DD9800F50CFA /* LaunchScreen.storyboard */,
 				F7527CE124F4DD9800F50CFA /* Info.plist */,
+				F7527CE724F4E02900F50CFA /* BirdTileSet.sks */,
 			);
 			path = "wild-birds";
 			sourceTree = "<group>";
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7527CE824F4E02900F50CFA /* BirdTileSet.sks in Resources */,
 				F7527CDB24F4DD9600F50CFA /* Main.storyboard in Resources */,
 				F7527CD224F4DD9600F50CFA /* GameScene.sks in Resources */,
 				F7527CDD24F4DD9800F50CFA /* Assets.xcassets in Resources */,
