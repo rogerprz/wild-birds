@@ -41,6 +41,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F744311324F634C700835E18 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F7527CD924F4DD9600F50CFA /* Main.storyboard */,
+				F7527CDC24F4DD9800F50CFA /* Assets.xcassets */,
+				F7527CDE24F4DD9800F50CFA /* LaunchScreen.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F744311424F634D400835E18 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F7527CD124F4DD9600F50CFA /* GameScene.sks */,
+				F7527CD524F4DD9600F50CFA /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F744311524F634F800835E18 /* TileSets */ = {
+			isa = PBXGroup;
+			children = (
+				F7527CE724F4E02900F50CFA /* BirdTileSet.sks */,
+			);
+			path = TileSets;
+			sourceTree = "<group>";
+		};
+		F744311624F6352900835E18 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				F7527CCF24F4DD9600F50CFA /* AppDelegate.swift */,
+				F7527CE124F4DD9800F50CFA /* Info.plist */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		F744311724F6354100835E18 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F7527CD724F4DD9600F50CFA /* GameViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		F7527CC324F4DD9600F50CFA = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +104,11 @@
 		F7527CCE24F4DD9600F50CFA /* wild-birds */ = {
 			isa = PBXGroup;
 			children = (
-				F7527CCF24F4DD9600F50CFA /* AppDelegate.swift */,
-				F7527CD124F4DD9600F50CFA /* GameScene.sks */,
-				F7527CD524F4DD9600F50CFA /* GameScene.swift */,
-				F7527CD724F4DD9600F50CFA /* GameViewController.swift */,
-				F7527CD924F4DD9600F50CFA /* Main.storyboard */,
-				F7527CDC24F4DD9800F50CFA /* Assets.xcassets */,
-				F7527CDE24F4DD9800F50CFA /* LaunchScreen.storyboard */,
-				F7527CE124F4DD9800F50CFA /* Info.plist */,
-				F7527CE724F4E02900F50CFA /* BirdTileSet.sks */,
+				F744311524F634F800835E18 /* TileSets */,
+				F744311324F634C700835E18 /* UI */,
+				F744311424F634D400835E18 /* Scenes */,
+				F744311724F6354100835E18 /* ViewController */,
+				F744311624F6352900835E18 /* Template */,
 			);
 			path = "wild-birds";
 			sourceTree = "<group>";
