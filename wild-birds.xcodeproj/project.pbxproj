@@ -72,7 +72,6 @@
 			isa = PBXGroup;
 			children = (
 				F7527CCF24F4DD9600F50CFA /* AppDelegate.swift */,
-				F7527CE124F4DD9800F50CFA /* Info.plist */,
 			);
 			path = Template;
 			sourceTree = "<group>";
@@ -104,6 +103,7 @@
 		F7527CCE24F4DD9600F50CFA /* wild-birds */ = {
 			isa = PBXGroup;
 			children = (
+				F7527CE124F4DD9800F50CFA /* Info.plist */,
 				F744311524F634F800835E18 /* TileSets */,
 				F744311324F634C700835E18 /* UI */,
 				F744311424F634D400835E18 /* Scenes */,
