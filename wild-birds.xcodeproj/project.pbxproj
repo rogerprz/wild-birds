@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F744311924FCC4A600835E18 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F744311824FCC4A600835E18 /* Default-568h@2x.png */; };
+		F744311C24FCC67500835E18 /* GameCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F744311B24FCC67500835E18 /* GameCamera.swift */; };
 		F7527CD024F4DD9600F50CFA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7527CCF24F4DD9600F50CFA /* AppDelegate.swift */; };
 		F7527CD224F4DD9600F50CFA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = F7527CD124F4DD9600F50CFA /* GameScene.sks */; };
 		F7527CD624F4DD9600F50CFA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7527CD524F4DD9600F50CFA /* GameScene.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F744311824FCC4A600835E18 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		F744311B24FCC67500835E18 /* GameCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCamera.swift; sourceTree = "<group>"; };
 		F7527CCC24F4DD9600F50CFA /* wild-birds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "wild-birds.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7527CCF24F4DD9600F50CFA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7527CD124F4DD9600F50CFA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -84,9 +88,18 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		F744311A24FCC63C00835E18 /* CustomNodes */ = {
+			isa = PBXGroup;
+			children = (
+				F744311B24FCC67500835E18 /* GameCamera.swift */,
+			);
+			path = CustomNodes;
+			sourceTree = "<group>";
+		};
 		F7527CC324F4DD9600F50CFA = {
 			isa = PBXGroup;
 			children = (
+				F744311824FCC4A600835E18 /* Default-568h@2x.png */,
 				F7527CCE24F4DD9600F50CFA /* wild-birds */,
 				F7527CCD24F4DD9600F50CFA /* Products */,
 			);
@@ -103,6 +116,7 @@
 		F7527CCE24F4DD9600F50CFA /* wild-birds */ = {
 			isa = PBXGroup;
 			children = (
+				F744311A24FCC63C00835E18 /* CustomNodes */,
 				F7527CE124F4DD9800F50CFA /* Info.plist */,
 				F744311524F634F800835E18 /* TileSets */,
 				F744311324F634C700835E18 /* UI */,
@@ -176,6 +190,7 @@
 				F7527CD224F4DD9600F50CFA /* GameScene.sks in Resources */,
 				F7527CDD24F4DD9800F50CFA /* Assets.xcassets in Resources */,
 				F7527CE024F4DD9800F50CFA /* LaunchScreen.storyboard in Resources */,
+				F744311924FCC4A600835E18 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +203,7 @@
 			files = (
 				F7527CD624F4DD9600F50CFA /* GameScene.swift in Sources */,
 				F7527CD824F4DD9600F50CFA /* GameViewController.swift in Sources */,
+				F744311C24FCC67500835E18 /* GameCamera.swift in Sources */,
 				F7527CD024F4DD9600F50CFA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
