@@ -26,7 +26,7 @@ class GameScene: SKScene {
         setupGestureRecognizers()
     }
     
-    func setupGestureRecognizers(){
+    func setupGestureRecognizers() {
         guard let view = view else { return }
         panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(pan))
         view.addGestureRecognizer(panRecognizer)
@@ -35,15 +35,16 @@ class GameScene: SKScene {
         view.addGestureRecognizer(pinchRecognizer)
     }
     
-    func setupLevel(){
+    func setupLevel() {
         if let mapNode = childNode(withName: "Tile Map Node") as? SKTileMapNode {
             self.mapNode = mapNode
             maxScale = mapNode.mapSize.width/frame.size.width
         }
         
         addCamera()
-        anchor.position = CGPoint(x: frame.midX/2, y: frame.midY/2)
+        anchor.position = CGPoint(x: mapNode.frame.midX/2, y: mapNode.frame.midY/2)
         addChild(anchor)
+        addBird()
     }
     
     func addCamera(){
@@ -58,13 +59,12 @@ class GameScene: SKScene {
     func addBird(){
         bird.position = anchor.position
         addChild(bird)
-        
     }
 }
 
 extension GameScene {
     
-    @objc func pan(sender: UIPanGestureRecognizer){
+    @objc func pan(sender: UIPanGestureRecognizer) {
         guard let view = view else { return }
         let translation = sender.translation(in: view) * gameCamera.yScale
 
@@ -73,7 +73,7 @@ extension GameScene {
         sender.setTranslation(CGPoint.zero, in: view)
     }
     
-    @objc func pinch(sender: UIPinchGestureRecognizer){
+    @objc func pinch(sender: UIPinchGestureRecognizer) {
         guard let view = view else { return }
         if sender.numberOfTouches == 2 {
 //            Give us position of gesture in view
