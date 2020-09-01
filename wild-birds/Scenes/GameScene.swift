@@ -16,6 +16,10 @@ class GameScene: SKScene {
     let gameCamera = GameCamera()
     var panRecognizer = UIPanGestureRecognizer()
     var pinchRecognizer = UIPinchGestureRecognizer()
+    var maxScale: CGFloat = 0
+    
+    var bird = Bird(type: .red)
+    let anchor = SKNode()
     
     override func didMove(to view: SKView) {
         setupLevel()
@@ -34,9 +38,12 @@ class GameScene: SKScene {
     func setupLevel(){
         if let mapNode = childNode(withName: "Tile Map Node") as? SKTileMapNode {
             self.mapNode = mapNode
+            maxScale = mapNode.mapSize.width/frame.size.width
         }
         
         addCamera()
+        anchor.position = CGPoint(x: frame.midX/2, y: frame.midY/2)
+        addChild(anchor)
     }
     
     func addCamera(){
@@ -47,13 +54,20 @@ class GameScene: SKScene {
         camera = gameCamera
         gameCamera.setConstraints(with: self, and: mapNode.frame, to: nil)
     }
+    
+    func addBird(){
+        bird.position = anchor.position
+        addChild(bird)
+        
+    }
 }
 
 extension GameScene {
     
     @objc func pan(sender: UIPanGestureRecognizer){
         guard let view = view else { return }
-        let translation = sender.translation(in: view)
+        let translation = sender.translation(in: view) * gameCamera.yScale
+
         gameCamera.position = CGPoint(x: gameCamera.position.x - translation.x, y: gameCamera.position.y + translation.y)
         
         sender.setTranslation(CGPoint.zero, in: view)
@@ -69,13 +83,18 @@ extension GameScene {
             if sender.state == .changed {
                 let convertedScale = 1/sender.scale
                 let newScale = gameCamera.yScale*convertedScale
+                
+                if newScale < maxScale && newScale > 0.5 {
+                    gameCamera.setScale(newScale)
+                }
+                
                 gameCamera.setScale(newScale)
 //                Give position after scaling process
                 let locationAfterScale = convertPoint(fromView: locationInView)
 //                 Give positoin after scaling
-                let locationDelta = CGPoint(x: location.x - locationAfterScale.x, y: location.y - locationAfterScale.y)
-//
-                let newPosition = CGPoint(x: gameCamera.position.x + locationDelta.x, y: gameCamera.position.y + locationDelta.y)
+                let locationDelta = location - locationAfterScale
+                let newPosition = gameCamera.position + locationDelta
+                
                 gameCamera.position = newPosition
                 sender.scale = 1.0
                 gameCamera.setConstraints(with: self, and: mapNode.frame, to: nil)
