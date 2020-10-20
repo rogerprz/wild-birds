@@ -22,6 +22,16 @@ class GameCamera: SKCameraNode {
         let yRange = SKRange(lowerLimit: insetContentRect.minY, upperLimit: insetContentRect.maxY)
         let levelEdgeConstraints = SKConstraint.positionX(xRange, y: yRange)
         
+        if let node = node {
+            let zeroRange = SKRange(constantValue: 0.0)
+            let positionConstraint = SKConstraint.distance(zeroRange, to: node)
+            constraints = [positionConstraint, levelEdgeConstraints]
+        } else {
+            constraints = [levelEdgeConstraints]
+        }
+        
+        
+        
         constraints = [levelEdgeConstraints]
     }
 }

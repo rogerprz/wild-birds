@@ -29,7 +29,7 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
-            if bird.contains(location){
+            if bird.contains(location) {
                 panRecognizer.isEnabled = false
                 bird.grabbed = true
                 bird.position = location
@@ -42,22 +42,21 @@ class GameScene: SKScene {
             if bird.grabbed {
                 let location = touch.location(in: self)
                 bird.position = location
-                
             }
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if bird.grabbed {
+            gameCamera.setConstraints(with: self, and: mapNode.frame, to: bird)
             bird.grabbed = false
             bird.flying = true
-            connstraintToAnchor(active: false)
+            constraintToAnchor(active: false)
             let dx = anchor.position.x - bird.position.x
             let dy = anchor.position.y - bird.position.y
             let impulse = CGVector(dx: dx, dy: dy)
             bird.physicsBody?.applyImpulse(impulse)
             bird.isUserInteractionEnabled = false
-
         }
     }
     
@@ -77,21 +76,26 @@ class GameScene: SKScene {
         }
         
         addCamera()
+        
+        physicsBody = SKPhysicsBody(edgeLoopFrom: mapNode.frame)
+        physicsBody?.categoryBitMask = PhysicsCategory.edge
+        physicsBody?.contactTestBitMask = PhysicsCategory.bird | PhysicsCategory.block
+        physicsBody?.collisionBitMask = PhysicsCategory.all
+        
         anchor.position = CGPoint(x: mapNode.frame.midX/2, y: mapNode.frame.midY/2)
         addChild(anchor)
         addBird()
     }
     
-    func addCamera(){
+    func addCamera() {
         guard let view = view else { return }
         addChild(gameCamera)
         gameCamera.position = CGPoint(x: view.bounds.size.width/2, y: view.bounds.size.height/2)
-        
         camera = gameCamera
         gameCamera.setConstraints(with: self, and: mapNode.frame, to: nil)
     }
     
-    func addBird(){
+    func addBird() {
         bird.physicsBody = SKPhysicsBody(rectangleOf: bird.size)
         bird.physicsBody?.categoryBitMask = PhysicsCategory.bird
         bird.physicsBody?.contactTestBitMask = PhysicsCategory.all
@@ -99,18 +103,19 @@ class GameScene: SKScene {
         bird.physicsBody?.isDynamic = false
         bird.position = anchor.position
         addChild(bird)
-        connstraintToAnchor(active: true)
+        constraintToAnchor(active: true)
     }
     
-    func connstraintToAnchor(active: Bool){
+    func constraintToAnchor(active: Bool) {
         if active {
-            let slingeRange = SKRange(lowerLimit: 0.0, upperLimit: bird.size.width*3)
-            let positionContraint = SKConstraint.distance(slingeRange, to: anchor)
-            bird.constraints = [positionContraint]
+            let slingRange = SKRange(lowerLimit: 0.0, upperLimit: bird.size.width*3)
+            let positionConstraint = SKConstraint.distance(slingRange, to: anchor)
+            bird.constraints = [positionConstraint]
         } else {
             bird.constraints?.removeAll()
         }
     }
+    
 }
 
 extension GameScene {
@@ -118,9 +123,7 @@ extension GameScene {
     @objc func pan(sender: UIPanGestureRecognizer) {
         guard let view = view else { return }
         let translation = sender.translation(in: view) * gameCamera.yScale
-
         gameCamera.position = CGPoint(x: gameCamera.position.x - translation.x, y: gameCamera.position.y + translation.y)
-        
         sender.setTranslation(CGPoint.zero, in: view)
     }
     
@@ -138,8 +141,7 @@ extension GameScene {
                 if newScale < maxScale && newScale > 0.5 {
                     gameCamera.setScale(newScale)
                 }
-                
-                gameCamera.setScale(newScale)
+        
 //                Give position after scaling process
                 let locationAfterScale = convertPoint(fromView: locationInView)
 //                 Give positoin after scaling
