@@ -159,7 +159,7 @@ class GameScene: SKScene {
             roundState = .finished
         }
     }
-    
+   
 }
 
 extension GameScene {
@@ -174,29 +174,23 @@ extension GameScene {
     @objc func pinch(sender: UIPinchGestureRecognizer) {
         guard let view = view else { return }
         if sender.numberOfTouches == 2 {
-//            Give us position of gesture in view
             let locationInView = sender.location(in: view)
-//            Give us defines location before we pinch
             let location = convertPoint(fromView: locationInView)
             if sender.state == .changed {
                 let convertedScale = 1/sender.scale
                 let newScale = gameCamera.yScale*convertedScale
-                
                 if newScale < maxScale && newScale > 0.5 {
                     gameCamera.setScale(newScale)
                 }
-        
-//                Give position after scaling process
+                
                 let locationAfterScale = convertPoint(fromView: locationInView)
-//                 Give positoin after scaling
                 let locationDelta = location - locationAfterScale
                 let newPosition = gameCamera.position + locationDelta
-                
                 gameCamera.position = newPosition
                 sender.scale = 1.0
                 gameCamera.setConstraints(with: self, and: mapNode.frame, to: nil)
-                
             }
         }
     }
+    
 }
