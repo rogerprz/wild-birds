@@ -18,11 +18,11 @@ struct PhysicsCategory {
 
 extension CGPoint {
     
-    static public func + (left: CGPoint, right: CGPoint) -> CGPoint{
+    static public func + (left: CGPoint, right: CGPoint) -> CGPoint {
         return CGPoint(x: left.x + right.x, y: left.y + right.y)
     }
     
-    static public func - (left: CGPoint, right: CGPoint) -> CGPoint{
+    static public func - (left: CGPoint, right: CGPoint) -> CGPoint {
         return CGPoint(x: left.x - right.x, y: left.y - right.y)
     }
     

@@ -15,16 +15,17 @@ enum BirdType: String {
 class Bird: SKSpriteNode {
     
     let birdType: BirdType
+    
     var grabbed = false
     var flying = false {
         didSet {
             if flying {
-                physicsBody?.isDynamic = true 
+                physicsBody?.isDynamic = true
             }
         }
     }
     
-    init(type: BirdType){
+    init(type: BirdType) {
         birdType = type
         
         let color: UIColor!
@@ -44,4 +45,5 @@ class Bird: SKSpriteNode {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 }

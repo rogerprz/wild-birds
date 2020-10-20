@@ -122,8 +122,8 @@
 		F7527CCE24F4DD9600F50CFA /* wild-birds */ = {
 			isa = PBXGroup;
 			children = (
-				F744311A24FCC63C00835E18 /* CustomNodes */,
 				F7527CE124F4DD9800F50CFA /* Info.plist */,
+				F744311A24FCC63C00835E18 /* CustomNodes */,
 				F744311524F634F800835E18 /* TileSets */,
 				F744311324F634C700835E18 /* UI */,
 				F744311424F634D400835E18 /* Scenes */,
