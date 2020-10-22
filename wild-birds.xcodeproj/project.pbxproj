@@ -20,6 +20,7 @@
 		F7527CDD24F4DD9800F50CFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7527CDC24F4DD9800F50CFA /* Assets.xcassets */; };
 		F7527CE024F4DD9800F50CFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7527CDE24F4DD9800F50CFA /* LaunchScreen.storyboard */; };
 		F7527CE824F4E02900F50CFA /* BirdTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = F7527CE724F4E02900F50CFA /* BirdTileSet.sks */; };
+		F7BBD97725413E5E005F88AA /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BBD97625413E5E005F88AA /* SKNode+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F7527CDF24F4DD9800F50CFA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7527CE124F4DD9800F50CFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7527CE724F4E02900F50CFA /* BirdTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BirdTileSet.sks; sourceTree = "<group>"; };
+		F7BBD97625413E5E005F88AA /* SKNode+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		F7527CCE24F4DD9600F50CFA /* wild-birds */ = {
 			isa = PBXGroup;
 			children = (
+				F7BBD97525413E31005F88AA /* Extensions */,
 				F7527CE124F4DD9800F50CFA /* Info.plist */,
 				F744311A24FCC63C00835E18 /* CustomNodes */,
 				F744311524F634F800835E18 /* TileSets */,
@@ -134,6 +137,14 @@
 				F744311624F6352900835E18 /* Template */,
 			);
 			path = "wild-birds";
+			sourceTree = "<group>";
+		};
+		F7BBD97525413E31005F88AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F7BBD97625413E5E005F88AA /* SKNode+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7527CD624F4DD9600F50CFA /* GameScene.swift in Sources */,
+				F7BBD97725413E5E005F88AA /* SKNode+Extensions.swift in Sources */,
 				F71386EB253FE7F800E2D2B9 /* Block.swift in Sources */,
 				F744311E24FE0A4400835E18 /* Configuration.swift in Sources */,
 				F7527CD824F4DD9600F50CFA /* GameViewController.swift in Sources */,
