@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        // Get plist bird data and load it befor game starts
+        if let url = Bundle.main.url(forResource: "Levels", withExtension: "plist"){
+            do {
+                let data = try Data(contentsOf: url)
+                // sets plist properly to Lvls.lvlDic = lvlsDict
+                guard let levelsDictionary = try PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String:Any] else {
+                    print("Could not initialize levelsDictionary in AppDelegate.swift")
+                    return false
+                }
+                Levels.levelsDictionary = levelsDictionary
+            } catch {
+                print(error)
+            }
+        }
+        
         return true
     }
 

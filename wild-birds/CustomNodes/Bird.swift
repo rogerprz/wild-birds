@@ -13,7 +13,6 @@ enum BirdType: String {
 }
 
 class Bird: SKSpriteNode {
-    
     let birdType: BirdType
     
     var grabbed = false
@@ -35,7 +34,7 @@ class Bird: SKSpriteNode {
         flyingFrames = AnimationHelper.loadTextures(from: SKTextureAtlas(named: type.rawValue), withName: type.rawValue)
         let texture = SKTexture(imageNamed: type.rawValue + "1")
         
-        super.init(texture: texture, color: UIColor.clear, size:texture.size())
+        super.init(texture: texture, color: UIColor.clear, size: texture.size())
     }
     
     required init?(coder aDecoder: NSCoder) {

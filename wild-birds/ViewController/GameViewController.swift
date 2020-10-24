@@ -26,6 +26,7 @@ class GameViewController: UIViewController {
 }
 
 extension GameViewController: SceneManagerDelegate {
+    
     func presentMenuScene() {
         let menuScene = MenuScene()
         menuScene.sceneManagerDelegate = self
@@ -42,6 +43,7 @@ extension GameViewController: SceneManagerDelegate {
         let sceneName = "GameScene_\(level)"
         if let gameScene = SKScene(fileNamed: sceneName) as? GameScene {
             gameScene.sceneManagerDelegate = self
+            gameScene.level = level
             present(scene: gameScene)
         }
     }
@@ -51,7 +53,6 @@ extension GameViewController: SceneManagerDelegate {
             scene.scaleMode = .resizeFill
             view.presentScene(scene)
             view.ignoresSiblingOrder = true
-            
         }
     }
 }
