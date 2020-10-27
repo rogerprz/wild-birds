@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F71386EB253FE7F800E2D2B9 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71386EA253FE7F800E2D2B9 /* Block.swift */; };
+		F723105F2547CF32006ED3D5 /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F723105E2547CF32006ED3D5 /* Enemy.swift */; };
+		F72310622547D977006ED3D5 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72310612547D977006ED3D5 /* Popup.swift */; };
 		F744311924FCC4A600835E18 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F744311824FCC4A600835E18 /* Default-568h@2x.png */; };
 		F744311C24FCC67500835E18 /* GameCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = F744311B24FCC67500835E18 /* GameCamera.swift */; };
 		F744311E24FE0A4400835E18 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F744311D24FE0A4400835E18 /* Configuration.swift */; };
@@ -33,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		F71386EA253FE7F800E2D2B9 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		F723105E2547CF32006ED3D5 /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		F72310612547D977006ED3D5 /* Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		F744311824FCC4A600835E18 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F744311B24FCC67500835E18 /* GameCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCamera.swift; sourceTree = "<group>"; };
 		F744311D24FE0A4400835E18 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				F744311B24FCC67500835E18 /* GameCamera.swift */,
 				F744311F24FE130500835E18 /* Bird.swift */,
 				F71386EA253FE7F800E2D2B9 /* Block.swift */,
+				F723105E2547CF32006ED3D5 /* Enemy.swift */,
+				F72310612547D977006ED3D5 /* Popup.swift */,
 			);
 			path = CustomNodes;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F723105F2547CF32006ED3D5 /* Enemy.swift in Sources */,
 				F7BBD9952544E713005F88AA /* LevelData.swift in Sources */,
 				F7527CD624F4DD9600F50CFA /* GameScene.swift in Sources */,
 				F7BBD97725413E5E005F88AA /* SKNode+Extensions.swift in Sources */,
@@ -275,6 +282,7 @@
 				F744311C24FCC67500835E18 /* GameCamera.swift in Sources */,
 				F7BBD98E2544D7F2005F88AA /* AnimationHelper.swift in Sources */,
 				F744312024FE130500835E18 /* Bird.swift in Sources */,
+				F72310622547D977006ED3D5 /* Popup.swift in Sources */,
 				F7527CD024F4DD9600F50CFA /* AppDelegate.swift in Sources */,
 				F7BBD97D25413FEF005F88AA /* LevelScene.swift in Sources */,
 			);
